@@ -1,5 +1,4 @@
 # ToyrobotSimulation_Technical_Challenge
-# Technical Challenge
 
 ## Description
 
@@ -55,21 +54,3 @@ PLACE 0,0,NORTH
 LEFT
 REPORT
 Output: 0,0,WEST
-```
-
-## Deliverables
-
-Please provide the following in your response:
-
-- Github repo containing the code to the solution
-- Instructions on how to run the project
-- All relevant tests
-  
-  This is a coding challenge that is to be written in C# .NET 6 or above, where we are looking for you to show us your abilities and creativity, with particular attention to code structure(separation of concerns)
-  Make sure that the code is your own original work.
-  We do not expect you to spend lot of time on the task and do not expect a 'perfect' solution,
-  but please spend sufficient time on the task to demonstrate your abilities.
-  If there is something that is not clear, please use your professional judgment and document your assumptions.
-  If any circumstances arise that prevents you from completing the assignment on time, please reach out before the due date.
-
-

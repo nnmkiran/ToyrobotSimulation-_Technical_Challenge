@@ -31,8 +31,7 @@ namespace ToyRobot.Handlers
                     break;
                 case Command.MOVE:
                     var newLocation = _robot.Move();
-                    if
-                        (_tableTop.IsLocationValid(newLocation))
+                    if(_tableTop.IsLocationValid(newLocation))
                         _robot.Location = newLocation;
                     break;
                 case Command.LEFT:
