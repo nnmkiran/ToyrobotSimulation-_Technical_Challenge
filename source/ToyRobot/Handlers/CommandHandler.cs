@@ -31,7 +31,9 @@ namespace ToyRobot.Handlers
                     break;
                 case Command.MOVE:
                     var newLocation = _robot.Move();
-                    if(_tableTop.IsLocationValid(newLocation))
+                    if (newLocation.X == _tableTop.Rows || newLocation.Y == _tableTop.Columns)
+                        throw new ArgumentException($"Invalid location. Move command beyond the line will be discarded: ({_tableTop.Rows},{_tableTop.Columns})");
+                    if (_tableTop.IsLocationValid(newLocation))
                         _robot.Location = newLocation;
                     break;
                 case Command.LEFT:
@@ -41,7 +43,7 @@ namespace ToyRobot.Handlers
                     _robot.RotateRight();
                     break;
                 case Command.REPORT:
-                    return GetOutput();
+                    return string.Format("Output: {0},{1},{2}", _robot.Location.X, _robot.Location.Y, _robot.Direction.ToString().ToUpper());
             }
 
             return string.Empty;
@@ -70,18 +72,12 @@ namespace ToyRobot.Handlers
 
             if (!Enum.TryParse(cmdParameters[cmdParameters.Length - 1], true, out Direction direction))
                 throw new ArgumentException("Invalid direction. Please select from one of the following directions: NORTH|EAST|SOUTH|WEST");
-            if(x> _tableTop.Rows || y > _tableTop.Columns)
+            if(x>= _tableTop.Rows || y >= _tableTop.Columns)
                 throw new ArgumentException($"Invalid location. X and Y must be in({_tableTop.Rows},{_tableTop.Columns})");
 
             return new Placement(new Location(x, y), direction);
 
         }
-
-        public string GetOutput()
-        {
-            return string.Format("Output: {0},{1},{2}", _robot.Location.X, _robot.Location.Y, _robot.Direction.ToString().ToUpper());
-        }
-
 
     }
 }

@@ -8,3 +8,6 @@
 /source/ToyRobot/obj
 /test/ToyRobot.Test/bin
 /test/ToyRobot.Test/obj
+/test/ToyRobotSimulator.Test/bin
+/test/ToyRobotSimulator.Test/obj
+/source/Simulator/obj
